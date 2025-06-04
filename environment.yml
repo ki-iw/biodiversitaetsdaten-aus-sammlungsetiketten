@@ -1,0 +1,9 @@
+name: app-kiebids
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.13
+  - pip
+  - pip:
+    - -r requirements.txt
