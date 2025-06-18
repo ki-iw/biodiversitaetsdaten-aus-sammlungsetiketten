@@ -1,6 +1,9 @@
-# Application Workflow for Information Extraction from Collection Labels <!-- omit in toc -->
+# KIEBIDS: Framework and Workflow for Information Extraction from Collection Labels <!-- omit in toc -->
 
-This repository provides an application for extracting information from collection labels.
+> [!TIP]
+> This is a release fork of the repository maintained by MfN Berlin. Check it out <a href="https://github.com/MfN-Berlin/app-kiebids" target="_blank" rel="noopener noreferrer">here</a> for new features and releases. 
+
+The repository provides an application for extracting information from digital representations of collection labels associated with objects in natural history collections. KIEBIDS, in German, stands for *<ins>KI</ins> basierte <ins>E</ins>xtraktion <ins>BI</ins>odiversitätsrelevanter <ins>D</ins>aten aus <ins>S</ins>chriftgut* (AI-based extraction of biodiversity-related data from written records).
 
 ## Table of Contents <!-- omit in toc -->
 - [Hardware and OS recommendations](#hardware-and-os-recommendations)
@@ -65,7 +68,7 @@ In the entity linking module, text that is tagged as denoting geographical entit
 ### 2. Layout Analysis
 - **Modules**: `segment_anything`
 
-   The `segment_anything` module is used to perform the image segmentation, identifying distinct regions/etickets within the image.
+   The `segment_anything` module is used to perform image segmentation - identifying distinct regions of interest, i.e. the image regions actually depicting labels within the entirety of the image.
 
 ### 3. Text Recognition
 - **Modules**: `easyocr`, `Moondream` (using Hugging Face)
@@ -97,7 +100,7 @@ sudo apt install -y ffmpeg libsm6 libxext6 curl libcurl4
 ```
 
 <!-- Files and models -->
-After cloning this repository, download the required SAM Model by running:
+After cloning this repository, download the required SAM Model to the `app-kiebids/models/` directory by running:
 ```
 cd ./app-kiebids
 wget -P ./models/ https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
@@ -250,3 +253,30 @@ When running the pipeline in debug mode the fiftyone database is enabled. If the
 ```bash
 rm data/debug/fifty-db --r
 ```
+
+# Collaborators
+
+The code for this project has been developed through a collaborative effort between MfN Berlin and KI-Ideenwerkstatt, technical implementation by Birds on Mars.
+<p></p>
+<a href="https://ki-ideenwerkstatt.de" target="_blank" rel="noopener noreferrer">
+  <img src="assets/kiiw.jpg" alt="KI Ideenwerkstatt" height="100">
+</a>
+<p></p>
+Technical realization
+<br>
+<a href="https://birdsonmars.com" target="_blank" rel="noopener noreferrer">
+  <img src="assets/bom.jpg" alt="Birds On Mars" height="100">
+</a>
+<p></p>
+An AI initiative by
+<br>
+<a href="https://www.bundesumweltministerium.de/" target="_blank" rel="noopener noreferrer">
+  <img src="assets/bmukn.svg" alt="Bundesministerium für Umwelt, Klimaschutz, Naturschutz und nukleare Sicherheit" height="100">
+</a>
+<p></p>
+In the context of
+<br>
+<a href="https://civic-coding.de" target="_blank" rel="noopener noreferrer">
+  <img src="assets/civic.svg" alt="Civic Coding" height="100">
+</a>
+
